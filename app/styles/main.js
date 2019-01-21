@@ -11,19 +11,11 @@ export default StyleSheet.create({
         fontWeight: "700",
         fontSize: 14,
     },
-
-    header: {
-        backgroundColor: '#E91E63',
-        alignItems: 'center',
-        justifyContent: 'center',
-        borderBottomWidth: 10,
-        borderBottomColor: '#ddd'
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 18,
-        padding: 26
-    },
+    // headerText: {
+    //     color: 'white',
+    //     fontSize: 18,
+    //     padding: 26
+    // },
     scrollContainer: {
         flex: 1,
         marginBottom: 100
