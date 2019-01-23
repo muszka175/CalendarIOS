@@ -3,22 +3,18 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput,
     ScrollView,
-    TouchableOpacity,
     ActivityIndicator
-} from 'react-native'
-import { createStackNavigator } from 'react-navigation';
-
+} from 'react-native';
 import styles from '../styles/main';
 
 import Task from './Task';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { Card, CardSection, Button, Input, Spinner } from './common';
+import _ from 'lodash';
+import { Card, CardSection, Button } from './common';
 import { Actions } from 'react-native-router-flux';
 import { fetchTasks } from '../actions';
-import { DateParser } from '../utils/DateParser';
 import moment from 'moment';
 
 

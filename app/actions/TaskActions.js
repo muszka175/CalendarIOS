@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View } from 'react-native';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
-import { CardSection } from '../components/common';
-import { db } from '../App';
-import moment from 'moment';
 
 import {
   FETCH_TASKS,
@@ -16,17 +11,19 @@ import {
 } from './types';
 
 export const fetchTasks = () => {
+  const { currentUser } = firebase.auth();  /* */
   return (dispatch) => {
-    firebase.database().ref('tasks/').on('value', snapshot => {
+    firebase.database().ref(`/users/${currentUser.uid}/tasks/`).on('value', snapshot => {  /* */ 
       dispatch({ type: FETCH_TASKS, payload: snapshot.val() })
     });
   }
 }
 
 export const createTask = (task) => {
+  const { currentUser } = firebase.auth(); /* */
   return (dispatch) => {
     dispatch({ type: TASK_LOADING });
-    firebase.database().ref('tasks/').push({
+    firebase.database().ref(`/users/${currentUser.uid}/tasks`).push({  /* */
       name: task.name,
       date: task.date,
       description: task.description
@@ -39,10 +36,11 @@ export const createTask = (task) => {
   }
 }
 
-export const editTask = (task) => {
+export const editTask = (task, uid) => {
+  const { currentUser } = firebase.auth(); /* */
   return (dispatch) => {
     dispatch({ type: TASK_LOADING });
-    firebase.database().ref(`tasks/${task.id}`).set({
+    firebase.database().ref(`/users/${currentUser.uid}/tasks/${task.id}`).set({ /* */
       name: task.name,
       date: task.date,
       description: task.description
@@ -56,9 +54,10 @@ export const editTask = (task) => {
 }
 
 export const taskDone = (taskId) => {
+  const { currentUser } = firebase.auth();  /* */
   return (dispatch) => {
     dispatch({ type: TASK_LOADING });
-    firebase.database().ref(`tasks/${taskId}`).remove()
+    firebase.database().ref(`/users/${currentUser.uid}/tasks/${taskId}`).remove() /* */
     .then(data => {
       dispatch({ type: REMOVE_TASK });
       Actions.main();
