@@ -4,12 +4,13 @@ import LoginForm from './components/LoginForm';
 import TaskCreate from './components/TaskCreate';
 import TaskEdit from './components/TaskEdit';
 import TaskDetails from './components/TaskDetails';
+import  { createStackNavigator }  from 'react-navigation';
 import Main from './components/Main';
 import TasksCalendar from './components/TasksCalendar';
 
 const RouterComponent = () => {
     return (
-        <Router sceneStyle={{ paddingTop: 65 }}>
+        <Router /*sceneStyle={{ paddingTop: 65 }}*/ >
             <Stack key='root'>
                 <Scene key="auth">
                     <Scene key="login" component={LoginForm} title="Please Login" />

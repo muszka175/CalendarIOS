@@ -18,7 +18,8 @@ import { connect } from 'react-redux';
 import { Card, CardSection, Button, Input, Spinner } from './common';
 import { Actions } from 'react-native-router-flux';
 import { fetchTasks } from '../actions';
-
+import { DateParser } from '../utils/DateParser';
+import moment from 'moment';
 
 
 class Main extends Component {
@@ -30,8 +31,14 @@ class Main extends Component {
         Actions.calendar();
     }
 
+    compareDate = (first, second) => moment(first.date).valueOf() - moment(second.date).valueOf();;
+
     render() {
-        const tasks = this.props.tasks.length > 0 ? this.props.tasks.map(task => <Task key={task.id} task={task} />) : <Text>There are no tasks.</Text>;
+        const tasks = 
+        this.props.tasks.length > 0 ? 
+        this.props.tasks.sort(this.compareDate).map(task => <Task key={task.id} task={task} />) 
+        : 
+        <Text>There are no tasks.</Text>;
 
         return (
             <View style={styles.container}>

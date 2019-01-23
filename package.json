@@ -9,9 +9,9 @@
   "dependencies": {
     "firebase": "^5.8.0",
     "lodash": "^4.16.4",
-    "moment": "^2.23.0",
+    "moment": "^2.24.0",
     "react": "16.6.3",
-    "react-native": "0.57.8",
+    "react-native": "^0.57.8",
     "react-native-calendar-select": "^0.1.2",
     "react-native-calendars": "^1.21.0",
     "react-native-communications": "^2.1.3",
