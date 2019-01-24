@@ -79,5 +79,10 @@ export default StyleSheet.create({
     },
     noteDeleteText: {
         color: 'white'
+    },
+    editButton: {
+        backgroundColor: '#ce1626',
+        width: '100%',
+        height: '100%',
     }
 });

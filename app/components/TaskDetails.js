@@ -36,7 +36,7 @@ class TaskDetails extends React.Component {
                     </Card>
                     <Card>
                         <CardSection>
-                            <Button onPress={() => this._goToTaskEdit(this.props.task)}>
+                            <Button red onPress={() => this._goToTaskEdit(this.props.task)}>
                                 Edit
                             </Button>
                         </CardSection>
