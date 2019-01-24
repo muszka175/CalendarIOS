@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import {
+    StyleSheet
+} from 'react-native';
 
 export default StyleSheet.create({
     container: {
@@ -8,6 +10,11 @@ export default StyleSheet.create({
     listElementHeader: {
         marginBottom: 5,
         marginTop: 5,
+        fontWeight: "700",
+        fontSize: 14,
+        width: '100%'
+    },
+    taskName: {
         fontWeight: "700",
         fontSize: 14,
     },
@@ -51,5 +58,26 @@ export default StyleSheet.create({
     addButtonText: {
         color: '#fff',
         fontSize: 24
+    },
+    note: {
+        width: '100%',
+        padding: 20,
+        borderBottomWidth: 2,
+        borderBottomColor: '#ededed',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+
+    },
+    noteDelete: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ce1626',
+        fontSize: 30,
+        padding: 10,
+    },
+    noteDeleteText: {
+        color: 'white'
     }
-})
+});

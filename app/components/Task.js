@@ -21,10 +21,14 @@ export default class Task extends React.Component {
             <Card key={this.props.task.id}>
                 <TouchableOpacity onPress={() => this._goToTask(this.props.task)}>
                     <CardSection>
-                        <View>
+                        <View style={styles.note}>
 
-                            <Text style={styles.listElementHeader}>{this.props.task.name}</Text>
+                            <Text style={styles.taskName}>{this.props.task.name}</Text>
                             {this.props.task.date && <Text>{moment.unix(this.props.task.date).format('DD.MM.YYYY')}</Text>}
+
+                            <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
+                                <Text style={styles.noteDeleteText}>Delete</Text>
+                            </TouchableOpacity>
 
                         </View>
                     </CardSection>
